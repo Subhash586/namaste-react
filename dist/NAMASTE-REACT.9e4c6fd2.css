@@ -22,4 +22,31 @@
   margin: 10px;
   padding: 10px;
 }
+
+.res-container {
+  flex-direction: wrap;
+  display: flex;
+}
+
+.res-card {
+  cursor: pointer;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 300px;
+  margin: 5px;
+  padding: 5px;
+  display: grid;
+}
+
+.res-card:hover {
+  border: 1px solid #000;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-logo {
+  width: 100%;
+}
 /*# sourceMappingURL=NAMASTE-REACT.9e4c6fd2.css.map */

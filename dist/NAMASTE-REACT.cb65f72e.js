@@ -753,12 +753,19 @@ _c = Header;
 const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "app",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
-            fileName: "App.js",
-            lineNumber: 34,
-            columnNumber: 10
-        }, undefined)
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 34,
+                columnNumber: 10
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 35,
+                columnNumber: 10
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "App.js",
         lineNumber: 33,
         columnNumber: 9
@@ -766,14 +773,225 @@ const AppLayout = ()=>{
 };
 _c1 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
+/*const RestaurantCard = (props) => {
+  const { resData } = props;
+  return (
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/iplzq141nnyv4ftvgjk3"
+      />
+      <h3>{resData.card.info.name}</h3>
+      <h4> {resData.card.info.cuisines}</h4>
+      <h4>{resData.card.info.avgRating}</h4>
+      <h4>{resData.card.info.sla.deliveryTime}</h4>
+    </div>
+  );
+};*/ const RestaurantCard = (props)=>{
+    const { resData } = props;
+    const { info } = resData.card; // Extract the 'info' object from 'card'
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "res-card",
+        style: {
+            backgroundColor: "#f0f0f0"
+        },
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "res-logo",
+                alt: "res-logo",
+                src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/iplzq141nnyv4ftvgjk3"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 67,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: info.name
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 72,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: info.cuisines.join(", ")
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 73,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: info.avgRating
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 74,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    info.sla.deliveryTime,
+                    " mins"
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 75,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 66,
+        columnNumber: 5
+    }, undefined);
+};
+_c2 = RestaurantCard;
+const resObj = [
+    {
+        card: {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+            info: {
+                id: "7224",
+                name: "Santosh Dhaba Exclusive",
+                city: "3",
+                slugs: {
+                    restaurant: "santosh-dhaba-banjara-road-no-12-banjara-hills",
+                    city: "hyderabad"
+                },
+                cloudinaryImageId: "v1ao5r5o3ph0xuz48cym",
+                address: "8-2-629/1/2, Opposite Pension Office, Road 12, Banjara Hills, Hyderabad",
+                locality: "Banjara Hills",
+                areaName: "Banjara Hills",
+                costForTwo: "30000",
+                costForTwoMessage: "\u20B9300 FOR TWO",
+                cuisines: [
+                    "Biryani",
+                    "Chinese",
+                    "Italian"
+                ],
+                avgRating: 4.3,
+                feeDetails: {},
+                avgRatingString: "4.3",
+                totalRatingsString: "79K+",
+                adTrackingId: "cid=28089947~p=1~adgrpid=28089947#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=7224~plpr=SEARCH#RESTAURANT~st=north indian~eid=aa787adf-2fc4-4247-83b5-47cdb54a8baf~srvts=1745681156401",
+                sla: {
+                    deliveryTime: 31,
+                    minDeliveryTime: 30,
+                    maxDeliveryTime: 35,
+                    lastMileTravel: 3.7,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "RAIN_MODE_NONE",
+                    slaString: "30-35 MINS",
+                    lastMileTravelString: "3.7 km",
+                    iconType: "ICON_TYPE_EMPTY"
+                },
+                availability: {
+                    opened: true,
+                    restaurantClosedMeta: {}
+                },
+                badges: {
+                    imageBadges: [
+                        {
+                            imageId: "Rxawards/_CATEGORY-North%20Indian.png",
+                            description: "Delivery!"
+                        }
+                    ]
+                },
+                aggregatedDiscountInfoV3: {
+                    header: "66% OFF",
+                    subHeader: "UPTO \u20B9126",
+                    headerTypeV2: "HEADER_TYPE_V2_CRICKET_MATCH",
+                    logoCtx: {
+                        text: "BENEFITS"
+                    }
+                }
+            }
+        }
+    },
+    ,
+    {
+        card: {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+            info: {
+                id: "840147",
+                name: "Indian Darbar Restaurant",
+                city: "3",
+                slugs: {
+                    restaurant: "indian-darbar-restaurant-himayath-nagar-himayath-nagar",
+                    city: "hyderabad"
+                },
+                cloudinaryImageId: "313774ada0dc4f878df143b7d7a095f0",
+                address: "3-5-1063 To 1081,Harivihar Colony,Beside Deepak Theatre,Narayanaguda, Amberpet Circle No 16, Hyderabad, Telangana",
+                locality: "Narayanaguda",
+                areaName: "Narayanaguda",
+                costForTwo: "60000",
+                costForTwoMessage: "\u20B9600 FOR TWO",
+                cuisines: [
+                    "Biryani",
+                    "Chinese",
+                    "North Indian",
+                    "Tandoor",
+                    "Seafood",
+                    "Fast Food"
+                ],
+                avgRating: 4,
+                feeDetails: {},
+                avgRatingString: "4.0",
+                totalRatingsString: "1.6K+",
+                adTrackingId: "cid=28219146~p=2~adgrpid=28219146#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=840147~plpr=SEARCH#RESTAURANT~st=north indian~eid=810c1a51-734b-45b6-a7bd-f25ea0208d69~srvts=1745681156401",
+                sla: {
+                    deliveryTime: 36,
+                    minDeliveryTime: 35,
+                    maxDeliveryTime: 40,
+                    lastMileTravel: 5,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "RAIN_MODE_NONE",
+                    slaString: "35-40 MINS",
+                    lastMileTravelString: "5.0 km",
+                    iconType: "ICON_TYPE_EMPTY"
+                }
+            }
+        }
+    }
+];
+/*const Body =() =>{
+    return(
+        <div className="body">
+                <RestaurantCard resData={resObj} />
+                <RestaurantCard resData={resObj} />
+                <RestaurantCard resData={resObj}/>
+                <RestaurantCard resData={resObj}/>
+                
+            </div>
+        
+    )
+}*/ const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "body",
+        children: resObj.map((res, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                resData: res
+            }, index, false, {
+                fileName: "App.js",
+                lineNumber: 216,
+                columnNumber: 9
+            }, undefined))
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 214,
+        columnNumber: 5
+    }, undefined);
+};
+_c3 = Body;
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 41,
+    lineNumber: 221,
     columnNumber: 13
-}, undefined));
-var _c, _c1;
+}, undefined)) //episode 4 at left 42 min
+;
+var _c, _c1, _c2, _c3;
 $RefreshReg$(_c, "Header");
 $RefreshReg$(_c1, "AppLayout");
+$RefreshReg$(_c2, "RestaurantCard");
+$RefreshReg$(_c3, "Body");
 
   $parcel$ReactRefreshHelpers$4931.postlude(module);
 } finally {
